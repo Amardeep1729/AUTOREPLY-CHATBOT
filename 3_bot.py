@@ -20,17 +20,17 @@ def is_last_message_from_sender(chat_log, sender_name= "Medha"):
 
 # Wait for 1 second to ensure the screen is ready (optional)
 pyautogui.click (960 ,1053)
-time.sleep(1)
+time.sleep(2)
 
 while True:
 
     # Drag to select text
     pyautogui.moveTo(740,222)  # Move to start position
-    pyautogui.dragTo(1721,944, duration=1.5, button='left')  # Drag to select text
+    pyautogui.dragTo(1721,944, duration=2, button='left')  # Drag to select text
 
     # Copy selected text
     pyautogui.hotkey('ctrl', 'c')
-    time.sleep(0.5)  # Give time for copying
+    time.sleep(2)  # Give time for copying
     pyautogui.click(1721,850)
 
     # Get text from clipboard
@@ -44,7 +44,7 @@ while True:
         completion = client.chat.completions.create(
                 model="gpt-4o-mini",
                 messages=[
-                    {"role": "system", "content": "You are a person name Amardeep that provides clear and concise responses. Do NOT include the current date, time, or  your  name."},
+                    {"role": "system", "content": "You are a person name Amardeep that provides clear and concise responses. Do not include the current date, time, or  your  name."},
                     {
                         "role": "user",
                         "content": chat_history     }
@@ -59,7 +59,7 @@ while True:
         time.sleep(1)
 
         pyautogui.hotkey('ctrl', 'v')
-        time.sleep(0.5)  
+        time.sleep(2)  
     
         pyautogui.press('enter')
   
